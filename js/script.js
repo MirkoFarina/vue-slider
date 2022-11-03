@@ -30,7 +30,8 @@ createApp({
           urlImg: 'spagna.jpg'
         }
       ],
-      counterImg: 0
+      counterImg: 0,
+      autoPlay: ''
     }
   },
   methods: {
@@ -39,6 +40,17 @@ createApp({
       if(this.counterImg === this.postiDaVisitare.length) this.counterImg = 0;
 
       if(this.counterImg < 0) this.counterImg = this.postiDaVisitare.length - 1;
+    },
+    autoScroll(){
+      this.autoPlay = setInterval(() => {
+        this.nextPrev(true);
+      }, 1000);
+    },
+    stopAutoScroll(){
+      clearInterval(this.autoPlay);
     }
+  },
+  mounted(){
+    this.autoScroll();
   }
 }).mount('#app')
