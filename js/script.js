@@ -44,7 +44,7 @@ createApp({
     autoScroll(){
       this.autoPlay = setInterval(() => {
         this.nextPrev(true);
-      }, 1000);
+      }, 3000);
     },
     stopAutoScroll(){
       clearInterval(this.autoPlay);
