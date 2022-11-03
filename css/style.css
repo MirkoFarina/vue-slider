@@ -15,6 +15,15 @@ button {
   cursor: pointer;
 }
 
+h2, #ps {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#ps {
+  font-size: .6rem;
+}
+
 .d-none {
   display: none;
 }
