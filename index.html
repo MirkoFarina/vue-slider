@@ -7,33 +7,37 @@
   <script src="https://unpkg.com/vue@3"></script>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous'/>
   <link rel="stylesheet" href="css/style.css">
-  <title>Carosello Array di Oggetti</title>
+  <title>Vue Slider</title>
 </head>
 <body>
   
   <div class="container" id="app">
    <div class="slider">
      <div class="container-slider-top">
-      <!-- <div class="img-slider-top d-none">
-        <img src="img/${oggetto.urlImg}" alt="${oggetto.nome}"> 
+
+      <div class="img-slider-top">
+        <img :src="'img/' + postiDaVisitare[counterImg].urlImg" :alt="postiDaVisitare[counterImg].nome"> 
       
         <div class="description">
-          <h2> ${oggetto.nome}  </h2>
-          <p>  ${oggetto.descrizione} </p>
+          <h2> {{postiDaVisitare[counterImg].nome}}  </h2>
+          <p>  {{postiDaVisitare[counterImg].descrizione}} </p>
         </div>
-      </div>   -->
+      </div> 
+
      </div>
      <div class="container-slider-bottom">
-      <!-- <div class="img-slider-bottom">
-        <img class="" src="img/${oggetto.urlImg}"
-        alt="${oggetto.nome}">
-      </div> -->
+
+      <div v-for="(citta, index) in postiDaVisitare" class="img-slider-bottom" :class="{'active': index == counterImg }" @click='counterImg = index'>
+        <img  :src="'img/' + citta.urlImg"
+        alt="citta.nome">
+      </div>
+
     </div>
     <div class="button">
-      <button class="btn right">
+      <button class="btn right" @click="nextPrev(true)">
         <i class="fa-solid fa-circle-chevron-right"></i>
       </button>
-      <buttcon class="btn left">
+      <buttcon class="btn left" @click="nextPrev(false)">
         <i class="fa-solid fa-circle-chevron-left"></i>
       </button>
     </div>

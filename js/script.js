@@ -29,7 +29,16 @@ createApp({
           descrizione: "Francisco Franco ha lasciato in eredità l'ordine. In Spagna funziona tutto e funziona bene, ci sono educazione, pulizia, rispetto e poca burocrazia.",
           urlImg: 'spagna.jpg'
         }
-      ]
+      ],
+      counterImg: 0
+    }
+  },
+  methods: {
+    nextPrev(isNext){
+      isNext ? this.counterImg++ : this.counterImg--;
+      if(this.counterImg === this.postiDaVisitare.length) this.counterImg = 0;
+
+      if(this.counterImg < 0) this.counterImg = this.postiDaVisitare.length - 1;
     }
   }
 }).mount('#app')
