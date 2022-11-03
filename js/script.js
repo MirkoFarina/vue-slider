@@ -31,7 +31,8 @@ createApp({
         }
       ],
       counterImg: 0,
-      autoPlay: ''
+      autoPlay: '',
+      isStop: true
     }
   },
   methods: {
@@ -44,10 +45,14 @@ createApp({
     autoScroll(){
       this.autoPlay = setInterval(() => {
         this.nextPrev(true);
+        return true;
       }, 3000);
     },
     stopAutoScroll(){
       clearInterval(this.autoPlay);
+    },
+    checkIsStopped(){
+      this.isStop ? this.isStop = !this.isStop : this.isStop = !this.isStop;
     }
   },
   mounted(){

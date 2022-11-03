@@ -111,7 +111,7 @@ button {
   filter: brightness(1);
 }
 
-.stop {
+.btn-start-stop {
   background-color: black;
   color: white;
  padding: 10px 0;

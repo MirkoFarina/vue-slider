@@ -44,8 +44,11 @@
    </div>
 
    
-   <button class="stop">
+   <button class="btn-start-stop" @click="stopAutoScroll(), checkIsStopped()" v-if="isStop">
       STOP
+   </button>
+   <button class="btn-start-stop" @click="autoScroll(), checkIsStopped()" v-if="!isStop">
+      START
    </button>
 
   </div>
