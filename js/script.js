@@ -16,7 +16,7 @@ createApp({
         },
         {
           nome: "Brasile",
-          descrizione: "Molti luoghi sanno raccontare con le immagini. <br> Pochi sanno farlo anche con il ritmo e la musica.",
+          descrizione: "Molti luoghi sanno raccontare con le immagini. Pochi sanno farlo anche con il ritmo e la musica.",
           urlImg: 'brasile.jpg'
         },
         {

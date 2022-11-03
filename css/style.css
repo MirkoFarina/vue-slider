@@ -120,6 +120,10 @@ h2, #ps {
   filter: brightness(1);
 }
 
+p {
+  text-align: center;
+}
+
 .btn-start-stop {
   background-color: black;
   color: white;
